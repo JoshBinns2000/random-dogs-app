@@ -42,7 +42,7 @@ function App() {
   }, [isCycling]);
 
   return (
-    <div className="container">
+    <div className="container sliding-background">
       <ImageRow imageUrl={imageUrl}></ImageRow>
       <div className="padded">
         <button onClick={() => setIsCycling(!isCycling)}>WIDE DOG</button>
