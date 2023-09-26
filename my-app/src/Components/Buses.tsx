@@ -10,7 +10,6 @@ const Buses = () => {
 
     const renderBusCards = () => {
         if (busList.length === 0) return;
-        console.log(busList);
         
         return busList.map(bus => {
             return <BusCard bus={bus}></BusCard>
