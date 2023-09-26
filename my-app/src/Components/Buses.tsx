@@ -3,7 +3,7 @@ import BusCard from "./BusCard";
 import Bus, { exampleBuses } from "../Models/Bus";
 
 const Buses = () => {
-    const baseUrl = "https://api.tfl.gov.uk/StopPoint/490008660N/Arriva"; // specifically Kentish town code
+    const baseUrl = "https://api.tfl.gov.uk/StopPoint/490008660N/Arrivals"; // specifically Kentish town code
 
     var [busText, setBusText] = React.useState("Press for some buses");
     var [busList, setBusList] = React.useState<Bus[]>([]);
