@@ -32,7 +32,30 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+img {
+  min-height: 30rem;
+  height: 30rem;
+}
+
+button{
+  width: 10rem;
+  height: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.padded{
+  padding: 1rem;
 }
