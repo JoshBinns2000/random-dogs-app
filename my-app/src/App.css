@@ -41,12 +41,18 @@
 img {
   min-height: 30rem;
   height: 30rem;
+  width: 100%;
 }
 
-button{
-  width: 10rem;
-  height: 2rem;
+button {
+  width: max-content;
   border-radius: 1rem;
+  padding: 1rem;
+  background-color: aqua;
+}
+
+button:hover {
+  background-color: cadetblue;
 }
 
 .container {
@@ -57,6 +63,46 @@ button{
   padding: 1rem;
 }
 
-.padded{
+.padded {
   padding: 1rem;
+}
+
+.busContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-around; */
+  width: 100%;
+  padding: 1rem;
+}
+
+.busCard {
+  background-color: lightgrey;
+  border: solid darkgrey;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  width: 15rem;
+  padding: 1%;
+  aspect-ratio: 1;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.busCard:hover {
+  background-color: grey;
+}
+
+.busCard li {
+  text-align: right;
+  background-color: inherit;
+  padding: 2%;
+}
+
+.busCard h1 {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  font-size: large;
 }

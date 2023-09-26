@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import ImageRow from './Components/ImageRow';
+import Buses from './Components/Buses';
 
 function App() {
   var [imageUrl, setImageUrl] = React.useState("https://images.dog.ceo/breeds/terrier-bedlington/n02093647_524.jpg");
@@ -11,16 +11,19 @@ function App() {
   const cycleInterval = useRef<NodeJS.Timeout>();
 
   const baseUrl = "https://dog.ceo/api/breeds/image/random";
+  const backupDogImage = "https://images.dog.ceo/breeds/terrier-bedlington/n02093647_524.jpg";
 
   const getNewDogs = () => {
     fetch(baseUrl)
       .then(response => response.json())
-      .then(data => setImageUrl(data.message))
+      .then(data => {
+        if (data.message) setImageUrl(data.message)
+        else setImageUrl(backupDogImage);
+      })
       .catch(error => {
         console.log(error);
         getNewDogs();
       });
-      // handle bad image url
   }
 
   // App is never going to unmount
@@ -34,7 +37,7 @@ function App() {
     }
     else {
       getNewDogs();
-      cycleInterval.current = setInterval(getNewDogs, 500);
+      cycleInterval.current = setInterval(getNewDogs, 100);
     }
   }, [isCycling]);
 
@@ -42,8 +45,9 @@ function App() {
     <div className="container">
       <ImageRow imageUrl={imageUrl}></ImageRow>
       <div className="padded">
-        <button onClick={() => setIsCycling(!isCycling)}>DOG</button>
+        <button onClick={() => setIsCycling(!isCycling)}>WIDE DOG</button>
       </div>
+      <Buses></Buses>
     </div>
   );
 }
