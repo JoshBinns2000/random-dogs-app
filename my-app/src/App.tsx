@@ -103,8 +103,10 @@ return (
 
     <div className="youtube-container">
       <div className="phone-container">
+        <div className="top-phone-banner"></div>
         <YouTube videoId="xDHCZau61n4" opts={youtTubeOpts} style={youTubeStyle} onReady={onVideoPlayerReady}></YouTube>
         <button className="phone-button" onClick={handlePlayButtonClick}>{videoPlayerAction}</button>
+        <div className="bottom-phone-banner"></div>
       </div>
     </div>
   </div>
