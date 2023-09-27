@@ -45,7 +45,8 @@ function App() {
 
   const handleTestClick = () => {
     console.log(testBool);
-    setTestBool((testBool) => !testBool);
+    setTestBool(testBool => !testBool);
+    setTestBool(testBool => !testBool);
     console.log(testBool);
   }
 
@@ -56,7 +57,7 @@ function App() {
         <button onClick={() => setIsCycling(!isCycling)}>MANY DOG</button>
       </div>
       <Buses></Buses>
-      <button onClick={handleTestClick}>Test Button</button>
+      <button onClick={handleTestClick}>{testBool.toString()}</button>
     </div>
   );
 }
