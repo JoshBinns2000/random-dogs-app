@@ -44,6 +44,10 @@ img {
   width: 100%;
 }
 
+img:hover {
+  animation: barrel-roll .5s linear infinite;
+}
+
 button {
   width: max-content;
   border-radius: 1rem;
@@ -148,9 +152,60 @@ button:hover {
   } */
 }
 
+@keyframes bounce {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(200%, 60%);
+  }
+  50% {
+    transform: translate(270%, 30%);
+  }
+  75% {
+    transform: translate(120%, 0%);
+  }
+  90% {
+    transform: translate(60%, 60%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes bounce-and-barrel-roll {
+  0% {
+    transform: translate(0, 0), rotateX(0);
+  }
+  25% {
+    transform: translate(200%, 60%), rotateX(90deg);
+  }
+  50% {
+    transform: translate(270%, 30%), rotateX(180deg);
+  }
+  75% {
+    transform: translate(120%, 0%), rotateX(270deg);
+  }
+  90% {
+    transform: translate(60%, 60%), rotateX(324deg);
+  }
+  100% {
+    transform: translate(0, 0), rotateX(360deg);
+  }
+}
+
+@keyframes barrel-roll {
+  0% {
+    transform: rotateX(0), translate(inherit);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
 .sliding-background {
   background: url("https://s3.ap-southeast-1.amazonaws.com/cdn.vcgamers.com/news/wp-content/uploads/2023/01/Peternakan-Ayam-di-Minecraft.png");
-  height: 100%;
-  width: 100%;
-  animation: slide 5s linear infinite alternate;
+  height: 25%; /* dictated by children size */
+  width: 25%;
+  animation: bounce 15s linear infinite alternate;
 }

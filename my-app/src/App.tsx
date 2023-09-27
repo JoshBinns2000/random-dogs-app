@@ -10,6 +10,8 @@ function App() {
   var [isCycling, setIsCycling] = React.useState(false);
   const cycleInterval = useRef<NodeJS.Timeout>();
 
+  var [testBool, setTestBool] = React.useState(true);
+
   const baseUrl = "https://dog.ceo/api/breeds/image/random";
   const backupDogImage = "https://images.dog.ceo/breeds/terrier-bedlington/n02093647_524.jpg";
 
@@ -41,13 +43,20 @@ function App() {
     }
   }, [isCycling]);
 
+  const handleTestClick = () => {
+    console.log(testBool);
+    setTestBool((testBool) => !testBool);
+    console.log(testBool);
+  }
+
   return (
     <div className="container sliding-background">
       <ImageRow imageUrl={imageUrl}></ImageRow>
       <div className="padded">
-        <button onClick={() => setIsCycling(!isCycling)}>WIDE DOG</button>
+        <button onClick={() => setIsCycling(!isCycling)}>MANY DOG</button>
       </div>
       <Buses></Buses>
+      <button onClick={handleTestClick}>Test Button</button>
     </div>
   );
 }

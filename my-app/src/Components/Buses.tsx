@@ -35,7 +35,7 @@ const Buses = () => {
             .then(response => response.json())
             .then((data: Bus[]) => {
                 if (data[0] === undefined) {
-                    throw new TypeError(); // bruh - don't know why this works
+                    throw new Error("This is an error😂"); // bruh - don't know why this works
                 }
                 setBusList(data);
             })
