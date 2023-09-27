@@ -44,7 +44,7 @@ img {
   width: 100%;
 }
 
-img:hover {
+img:active {
   animation: barrel-roll .5s linear infinite;
 }
 
@@ -208,4 +208,46 @@ button:hover {
   height: 25%; /* dictated by children size */
   width: 25%;
   animation: bounce 15s linear infinite alternate;
+}
+
+.youtube-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: row;
+
+  z-index: -1;
+  opacity: 1.0;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.large-container {
+  position: relative;
+}
+
+.phone-container {
+  position: relative;
+  width: max-content;
+  height: max-content;
+  clip: auto;
+  z-index: 0;
+  top: 0;
+  right: 0;
+}
+
+.phone-button {
+  position: absolute;
+  background-color: white;
+  bottom: 10%;
+  left: 35%;
+  width: 30%;
+  z-index: 1;
+  /* height: 100%; */
+}
+
+.phone-button:hover {
+  background-color: lightgrey;
 }
